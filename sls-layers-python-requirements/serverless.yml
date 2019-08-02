@@ -1,0 +1,17 @@
+service: sls-layers-python-requirements
+
+provider:
+  name: aws
+  runtime: python3.6
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+    layer:
+      name: numpy
+      description: Numpy Library
+      compatibleRuntimes:
+        - python3.6
